@@ -70,7 +70,7 @@ dtm3 = removeSparseTerms(dtm3, 0.98)
 dtm3
 labeledTerms3 = as.data.frame(as.matrix(dtm3))
 
-# Merging bag of words from Snippet,Abstract,Headline in Test Data
+# Merging bag of words from Snippet,Abstract,Headline in Training Data
 final <- cbind(labeledTerms,labeledTerms2,labeledTerms3)
 
 # Text Analytics for Headline in Test Data
@@ -171,6 +171,7 @@ finaltest$WordCount <- log(finaltest$WordCount+1)
 # Logistic Regression Model
 logistic3 = glm(Popular ~., data = finaltrain, family=binomial)
 
+# Predicting Values
 predicttest = predict(logistic3,,newdata=finaltest,type="response")
 submission <- data.frame(test$UniqueID, predicttest)
 colnames(submission) <- c("UniqueID","Probability1")
