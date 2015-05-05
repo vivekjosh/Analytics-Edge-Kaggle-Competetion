@@ -1,11 +1,10 @@
 # Load the Training dataset
 train = read.csv("NYTimesBlogTrain.csv", stringsAsFactors=FALSE)
-popular <- subset(train,train$Popular==1)
 
 # Load the Test dataset
 test= read.csv("NYTimesBlogTest.csv", stringsAsFactors=FALSE)
 
-# Extract Date and time for Training and Test Data
+# Extract Date,time, Weekday for Training and Test Data
 train$date= as.Date(strptime(train$PubDate, "%Y-%m-%d %H:%M:%S"))
 train$Weekday<- weekdays(as.Date(train$PubDate))
 train$hour <- strftime(strptime(train$PubDate, "%Y-%m-%d %H:%M:%S"), '%H')
