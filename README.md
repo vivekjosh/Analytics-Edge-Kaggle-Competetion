@@ -1,3 +1,5 @@
+https://www.kaggle.com/c/15-071x-the-analytics-edge-competition-spring-2015
+
 This Competition was organized by Analytics Edge .Many blog articles are published each day, and the New York Times has to 
 decide which articles should be featured. In this competition, the challenge was to develop an analytics model that will help 
 the New York Times understand the features of a blog post that make it popular.
